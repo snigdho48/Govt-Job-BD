@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gov_job_b_d/infrastructure/theme/constant.color.dart';
-import 'package:gov_job_b_d/presentation/shared/AppBar_actions.dart';
+import 'package:gov_job_b_d/presentation/shared/appBar_actions.dart';
 import 'package:photo_view/photo_view.dart';
 
 import '../../infrastructure/navigation/routes.dart';
@@ -179,7 +179,7 @@ class _floatinButton extends StatelessWidget {
         ),
         isExtended: true,
         elevation: 0,
-        backgroundColor: darkBlue,
+        backgroundColor: MyColors.darkBlue,
         onPressed: () {},
         label: Text('Apply Here'),
         icon: SvgPicture.asset(
@@ -565,7 +565,7 @@ class _Deadlinevaccency extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
-                            backgroundColor: darkBlue.withOpacity(1),
+                            backgroundColor: MyColors.darkBlue.withOpacity(1),
                             shape: const StadiumBorder())),
                     ElevatedButton(
                         onPressed: () {},
@@ -579,7 +579,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -592,7 +592,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -605,7 +605,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -618,7 +618,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -631,7 +631,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                     ElevatedButton(
                         onPressed: () {},
                         child: Text(
@@ -644,7 +644,7 @@ class _Deadlinevaccency extends StatelessWidget {
                             shadowColor: Colors.transparent,
                             shape: const StadiumBorder(),
                             backgroundColor:
-                            Get.isDarkMode ? Colors.black : btnBgLight)),
+                            Get.isDarkMode ? Colors.black : MyColors.btnBgLight)),
                   ],
                 ),
               )
@@ -712,7 +712,7 @@ void showCustomDialog(BuildContext context, String url) {
                 'images/Reply.svg',
                 height: 80,
                 width: 80,
-                color: darkBlue,
+                color: MyColors.darkBlue,
               )),
         ),
         body: Center(

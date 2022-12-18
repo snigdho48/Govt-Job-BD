@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
-import 'infrastructure/theme/ThemeUtils.dart';
+import 'infrastructure/theme/theme_utils.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

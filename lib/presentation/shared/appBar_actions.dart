@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gov_job_b_d/infrastructure/theme/ThemeUtils.dart';
+import 'package:gov_job_b_d/infrastructure/theme/theme_utils.dart';
 import 'package:gov_job_b_d/infrastructure/theme/constant.color.dart';
 
 class AppBarActions extends StatelessWidget {
@@ -27,14 +27,14 @@ class AppBarActions extends StatelessWidget {
         InkWell(
             onTap: () {},
             child: SvgPicture.asset('images/notification.svg',
-                color: isDark ? darkBlue.withOpacity(1) : Colors.black54)),
+                color: isDark ? MyColors.darkBlue.withOpacity(1) : Colors.black54)),
         const SizedBox(
           width: 10,
         ),
         InkWell(
             onTap: () {},
             child: SvgPicture.asset('images/bookmark.svg',
-                color: isDark ? darkBlue.withOpacity(1) : Colors.black54)),
+                color: isDark ? MyColors.darkBlue.withOpacity(1) : Colors.black54)),
         SizedBox(
           width: MediaQuery.of(context).size.width / 25,
         ),
