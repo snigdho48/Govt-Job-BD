@@ -3,8 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:gov_job_b_d/infrastructure/navigation/routes.dart';
 import 'package:gov_job_b_d/infrastructure/theme/constant.color.dart';
-import 'package:gov_job_b_d/presentation/shared/AppBar_actions.dart';
-
+import 'package:gov_job_b_d/presentation/shared/appBar_actions.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -24,18 +23,22 @@ class HomeScreen extends GetView<HomeController> {
           ),
         ),
       ),
-      floatingActionButton: _floatinButton(),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 10,
+      floatingActionButton: _FloatinButton(),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10,
+            ),
           ),
           _SearchBox(),
-          const SizedBox(
-            height: 10,
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10,
+            ),
           ),
-          _HeaderSections(),
-          _ContentSection(),
+          SliverToBoxAdapter(child: _HeaderSections()),
+          SliverToBoxAdapter(child: _ContentSection()),
         ],
       ),
     );
@@ -43,6 +46,7 @@ class HomeScreen extends GetView<HomeController> {
 }
 
 class _SearchBox extends GetView<StatelessWidget> {
+  TextEditingController search = TextEditingController();
   _SearchBox({
     Key? key,
   }) : super(key: key);
@@ -51,7 +55,41 @@ class _SearchBox extends GetView<StatelessWidget> {
   Widget build(BuildContext context) {
     final bool isDark = Get.isDarkMode;
     context.theme;
-    TextEditingController search = TextEditingController();
+    return SliverAppBar(
+      backgroundColor: isDark ? MyColors.darkBlue : Colors.white,
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      floating: true,
+      title: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: isDark ? MyColors.darkBlue : Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 1,
+              blurRadius: 1,
+              offset: Offset(0, 1), // changes position of shadow
+            ),
+          ],
+        ),
+        child: TextField(
+          controller: search,
+          decoration: InputDecoration(
+            hintText: 'Search',
+            hintStyle: TextStyle(
+              color: isDark ? Colors.white : Colors.black54,
+            ),
+            prefixIcon: Icon(
+              Icons.search,
+              color: isDark ? Colors.white : Colors.black54,
+            ),
+            border: InputBorder.none,
+          ),
+        ),
+      ),
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Stack(
@@ -62,7 +100,7 @@ class _SearchBox extends GetView<StatelessWidget> {
                 borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 color: isDark
                     ? const Color(0xFF011627)
-                    : searchBar.withOpacity(.13)),
+                    : MyColors.searchBar.withOpacity(.13)),
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: TextFormField(
@@ -73,11 +111,11 @@ class _SearchBox extends GetView<StatelessWidget> {
                     hintStyle: TextStyle(
                         fontSize: 20,
                         color:
-                            isDark ? Colors.white60 : darkBlue.withOpacity(1)),
+                            isDark ? Colors.white60 : MyColors.darkBlue.withOpacity(1)),
                     icon: Icon(Icons.search,
                         size: 30,
                         color:
-                            isDark ? Colors.white : darkBlue.withOpacity(1))),
+                            isDark ? Colors.white : MyColors.darkBlue.withOpacity(1))),
               ),
             ),
           ),
@@ -153,7 +191,7 @@ class _ContentSection extends StatelessWidget {
                                         style: ElevatedButton.styleFrom(
                                             shadowColor: Colors.transparent,
                                             backgroundColor:
-                                                darkBlue.withOpacity(1),
+                                                MyColors.darkBlue.withOpacity(1),
                                             shape: const StadiumBorder())),
                                     const SizedBox(
                                       width: 10,
@@ -173,7 +211,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -192,7 +230,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -211,7 +249,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -230,7 +268,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -249,7 +287,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -268,7 +306,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -343,7 +381,7 @@ class _ContentSection extends StatelessWidget {
                                         style: ElevatedButton.styleFrom(
                                             shadowColor: Colors.transparent,
                                             backgroundColor:
-                                            darkBlue.withOpacity(1),
+                                            MyColors.darkBlue.withOpacity(1),
                                             shape: const StadiumBorder())),
                                     const SizedBox(
                                       width: 10,
@@ -363,7 +401,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -382,7 +420,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -401,7 +439,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -420,7 +458,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -439,7 +477,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -458,7 +496,7 @@ class _ContentSection extends StatelessWidget {
                                             shape: const StadiumBorder(),
                                             backgroundColor: isDark
                                                 ? Colors.black
-                                                : btnBgLight)),
+                                                : MyColors.btnBgLight)),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -528,7 +566,7 @@ class _ContentSection extends StatelessWidget {
                                       style: ElevatedButton.styleFrom(
                                           shadowColor: Colors.transparent,
                                           backgroundColor:
-                                              darkBlue.withOpacity(1),
+                                              MyColors.darkBlue.withOpacity(1),
                                           shape: const StadiumBorder())),
                                   const SizedBox(
                                     width: 10,
@@ -548,7 +586,7 @@ class _ContentSection extends StatelessWidget {
                                           shape: const StadiumBorder(),
                                           backgroundColor: isDark
                                               ? Colors.black
-                                              : btnBgLight)),
+                                              : MyColors.btnBgLight)),
                                   const SizedBox(
                                     width: 10,
                                   ),
@@ -617,7 +655,7 @@ class _HeaderSections extends StatelessWidget {
                       ),
                       style: ElevatedButton.styleFrom(
                           shadowColor: Colors.transparent,
-                          backgroundColor: darkBlue.withOpacity(1),
+                          backgroundColor: MyColors.darkBlue.withOpacity(1),
                           shape: const StadiumBorder())),
                   const SizedBox(
                     width: 10,
@@ -656,7 +694,7 @@ class _HeaderSections extends StatelessWidget {
                         ),
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
-                            backgroundColor: darkBlue.withOpacity(1),
+                            backgroundColor: MyColors.darkBlue.withOpacity(1),
                             shape: const StadiumBorder())),
                     const SizedBox(
                       width: 10,
@@ -777,7 +815,7 @@ class _HeaderSections extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: isDark
                                   ? Colors.white60
-                                  : darkBlue.withOpacity(1)),
+                                  : MyColors.darkBlue.withOpacity(1)),
                         ),
                         DropdownButton(
                           alignment: Alignment.center,
@@ -785,7 +823,7 @@ class _HeaderSections extends StatelessWidget {
                           icon: Icon(Icons.keyboard_arrow_down,
                               color: isDark
                                   ? Colors.white
-                                  : darkBlue.withOpacity(1)),
+                                  : MyColors.darkBlue.withOpacity(1)),
                           items: dropdownDate.map((String items) {
                             return DropdownMenuItem(
                               alignment: Alignment.center,
@@ -795,7 +833,7 @@ class _HeaderSections extends StatelessWidget {
                                 style: TextStyle(
                                     color: isDark
                                         ? Colors.white
-                                        : darkBlue.withOpacity(1)),
+                                        : MyColors.darkBlue.withOpacity(1)),
                               ),
                             );
                           }).toList(),
@@ -820,7 +858,7 @@ class _HeaderSections extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: isDark
                                   ? Colors.white60
-                                  : darkBlue.withOpacity(1)),
+                                  : MyColors.darkBlue.withOpacity(1)),
                         ),
                         DropdownButton(
                           alignment: Alignment.center,
@@ -828,7 +866,7 @@ class _HeaderSections extends StatelessWidget {
                           icon: Icon(Icons.keyboard_arrow_down,
                               color: isDark
                                   ? Colors.white
-                                  : darkBlue.withOpacity(1)),
+                                  : MyColors.darkBlue.withOpacity(1)),
                           items: dropdownDate.map((String items) {
                             return DropdownMenuItem(
                               alignment: Alignment.center,
@@ -838,7 +876,7 @@ class _HeaderSections extends StatelessWidget {
                                 style: TextStyle(
                                     color: isDark
                                         ? Colors.white
-                                        : darkBlue.withOpacity(1)),
+                                        : MyColors.darkBlue.withOpacity(1)),
                               ),
                             );
                           }).toList(),
@@ -877,7 +915,7 @@ class _AppbarHeading extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 25,
         ),
         Icon(Icons.badge_rounded,
-            color: isDark ? darkBlue.withOpacity(1) : Colors.black87),
+            color: isDark ? MyColors.darkBlue.withOpacity(1) : Colors.black87),
         SizedBox(
           width: MediaQuery.of(context).size.width / 50,
         ),
@@ -886,22 +924,22 @@ class _AppbarHeading extends StatelessWidget {
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
-              color: isDark ? darkBlue.withOpacity(1) : Colors.black87),
+              color: isDark ? MyColors.darkBlue.withOpacity(1) : Colors.black87),
         ),
         Text(
           'BD',
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
-              color: isDark ? darkBlue.withOpacity(.7) : Colors.black54),
+              color: isDark ? MyColors.darkBlue.withOpacity(.7) : Colors.black54),
         ),
       ],
     );
   }
 }
 
-class _floatinButton extends StatelessWidget {
-  const _floatinButton({
+class _FloatinButton extends StatelessWidget {
+  const _FloatinButton({
     Key? key,
   }) : super(key: key);
 
@@ -918,7 +956,7 @@ class _floatinButton extends StatelessWidget {
         ),
         isExtended: true,
         elevation: 0,
-        backgroundColor: darkBlue,
+        backgroundColor: MyColors.darkBlue,
         onPressed: () {
           showCustomSearchDialog(context);
         },
@@ -947,7 +985,7 @@ void showCustomSearchDialog(BuildContext context) {
                 'images/Reply.svg',
                 height: 80,
                 width: 80,
-                color: darkBlue,
+                color: MyColors.darkBlue,
               )),
         ),
         body: Container(
@@ -979,7 +1017,7 @@ void showCustomSearchDialog(BuildContext context) {
                         ),
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
-                            backgroundColor: darkBlue.withOpacity(1),
+                            backgroundColor: MyColors.darkBlue.withOpacity(1),
                             shape: const StadiumBorder())),
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 8,
@@ -992,7 +1030,7 @@ void showCustomSearchDialog(BuildContext context) {
                         ),
                         style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
-                            backgroundColor: darkBlue.withOpacity(1),
+                            backgroundColor: MyColors.darkBlue.withOpacity(1),
                             shape: const StadiumBorder())),
                   ],
                 )
