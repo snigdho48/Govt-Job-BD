@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:gov_job_b_d/infrastructure/navigation/routes.dart';
 import 'package:gov_job_b_d/infrastructure/theme/constant.color.dart';
 import 'package:gov_job_b_d/presentation/shared/appBar_actions.dart';
+import '../shared/components/job_list_card.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -142,472 +143,7 @@ class _ContentSection extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              InkWell(
-                onTap: () => Get.toNamed(Routes.CIRCULAR),
-                child: Container(
-                    constraints: BoxConstraints(
-                      minHeight: 120,
-                      maxHeight: double.infinity,
-                    ),
-                    width: MediaQuery.of(context).size.width / 1.08,
-                    decoration: BoxDecoration(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10.0)),
-                        color: isDark ? Color(0xFF011627) : Colors.white),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          contentPadding:
-                              const EdgeInsets.only(top: 10, left: 15),
-                          leading: SvgPicture.asset(
-                            'images/dummy.svg',
-                            height: 30,
-                            width: 30,
-                          ),
-                          title: const Text(
-                            'Hello This is Dummy Data for first time use and for tempotery',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: const Text(
-                            'Hello This is Dummy Data for first time use and for tempotery',
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 5),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width / 1.7,
-                                child: Wrap(
-                                  runSpacing: 5,
-                                  children: [
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: const Text(
-                                          'Govt',
-                                          style: TextStyle(fontSize: 15),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            backgroundColor:
-                                                MyColors.darkBlue.withOpacity(1),
-                                            shape: const StadiumBorder())),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Spacer(),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text('Free Post :200'),
-                                  SizedBox(
-                                    width: 8,
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    )),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              InkWell(
-                onTap: () => Get.toNamed(Routes.CIRCULAR),
-                child: Container(
-                    constraints: const BoxConstraints(
-                      minHeight: 120,
-                      maxHeight: double.infinity,
-                    ),
-                    width: MediaQuery.of(context).size.width / 1.08,
-                    decoration: BoxDecoration(
-                        borderRadius:
-                        const BorderRadius.all(Radius.circular(10.0)),
-                        color: isDark ? const Color(0xFF011627) : Colors.white),
-                    child: Column(
-                      children: [
-                        ListTile(
-                          contentPadding:
-                          const EdgeInsets.only(top: 10, left: 15),
-                          leading: SvgPicture.asset(
-                            'images/dummy.svg',
-                            height: 30,
-                            width: 30,
-                          ),
-                          title: const Text(
-                            'Hello This is Dummy Data for first time use and for tempotery',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: const Text(
-                            'Hello This is Dummy Data for first time use and for tempotery',
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 10,left: 5),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width / 1.7,
-                                child: Wrap(
-                                  runSpacing: 5,
-                                  children: [
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: const Text(
-                                          'Govt',
-                                          style: TextStyle(fontSize: 15),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            backgroundColor:
-                                            MyColors.darkBlue.withOpacity(1),
-                                            shape: const StadiumBorder())),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'data',
-                                          style: TextStyle(
-                                              fontSize: 15,
-                                              color: isDark
-                                                  ? Colors.white70
-                                                  : Colors.black54),
-                                        ),
-                                        style: ElevatedButton.styleFrom(
-                                            shadowColor: Colors.transparent,
-                                            shape: const StadiumBorder(),
-                                            backgroundColor: isDark
-                                                ? Colors.black
-                                                : MyColors.btnBgLight)),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Spacer(),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text('Free Post :200'),
-                                  SizedBox(
-                                    width: 8,
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    )),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                  constraints: const BoxConstraints(
-                    minHeight: 120,
-                    maxHeight: double.infinity,
-                  ),
-                  width: MediaQuery.of(context).size.width / 1.08,
-                  decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-                      color: isDark ? const Color(0xFF011627) : Colors.white),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      ListTile(
-                        contentPadding: const EdgeInsets.only(top: 10, left: 15),
-                        leading: SvgPicture.asset(
-                          'images/dummy.svg',
-                          height: 30,
-                          width: 30,
-                        ),
-                        title: const Text(
-                          'Hello This is Dummy Data for first time use and for tempotery',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        subtitle: const Text(
-                          'Hello This is Dummy Data for first time use and for tempotery',
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              child: Wrap(
-                                children: [
-                                  ElevatedButton(
-                                      onPressed: () {},
-                                      child: const Text(
-                                        'Govt',
-                                        style: TextStyle(fontSize: 15),
-                                      ),
-                                      style: ElevatedButton.styleFrom(
-                                          shadowColor: Colors.transparent,
-                                          backgroundColor:
-                                              MyColors.darkBlue.withOpacity(1),
-                                          shape: const StadiumBorder())),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  ElevatedButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        'data',
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color: isDark
-                                                ? Colors.white70
-                                                : Colors.black54),
-                                      ),
-                                      style: ElevatedButton.styleFrom(
-                                          shadowColor: Colors.transparent,
-                                          shape: const StadiumBorder(),
-                                          backgroundColor: isDark
-                                              ? Colors.black
-                                              : MyColors.btnBgLight)),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Spacer(),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text('Free Post :200'),
-                                SizedBox(
-                                  height: 10,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ))
+              JobListCard(isDark: isDark),
             ],
           ),
         ),
@@ -615,6 +151,7 @@ class _ContentSection extends StatelessWidget {
     );
   }
 }
+
 
 class _HeaderSections extends StatelessWidget {
   _HeaderSections({
@@ -639,45 +176,54 @@ class _HeaderSections extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+            Container(
+              width: double.infinity,
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const SizedBox(
                     width: 7,
                   ),
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Govt',
-                        style: TextStyle(fontSize: 15),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          shadowColor: Colors.transparent,
-                          backgroundColor: MyColors.darkBlue.withOpacity(1),
-                          shape: const StadiumBorder())),
+                  SizedBox(
+                    width: 80,
+                    height: 24,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'সরকারি',
+                          style: TextStyle(fontSize: 10),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            backgroundColor: MyColors.darkBlue.withOpacity(1),
+                            shape: const StadiumBorder())),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
-                  ElevatedButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Non Govt',
-                        style: TextStyle(fontSize: 15, color: Colors.black54),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          shadowColor: Colors.transparent,
-                          shape: const StadiumBorder(),
-                          backgroundColor: Colors.white)),
+                  SizedBox(
+                    width: 80,
+                    height: 24,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'বেসরকারি',
+                          style: TextStyle(fontSize: 10, color: Colors.black54),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            shape: const StadiumBorder(),
+                            backgroundColor: Colors.white)),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 10,
+
+            const SizedBox(
+              height: 4,
             ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -689,7 +235,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'সবগুলো',
                           style: TextStyle(fontSize: 15),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -702,7 +248,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'ডিফেন্স',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -715,7 +261,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'ইঞ্জিনিয়ারিং',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -728,7 +274,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'মন্ত্রণালয়',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -741,7 +287,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'সরকারি কর্মকর্তা',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -754,7 +300,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'শিক্ষা অধিদপ্তর',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -767,7 +313,7 @@ class _HeaderSections extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'data',
+                          'পরিসংখ্যান অধিদপ্তর',
                           style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -784,24 +330,20 @@ class _HeaderSections extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
+            Text(
+              '২৩৪ টি নিয়োগ পোস্ট পাওয়া গেছে',
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: isDark
+                      ? Colors.white60
+                      : const Color(0x00000).withOpacity(1)),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width / 7,
-                    child: Text(
-                      '203 Job Availble',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: isDark
-                              ? Colors.white60
-                              : const Color(0x00000).withOpacity(1)),
-                    ),
-                  ),
-                  Spacer(),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 2.595,
                     child: Wrap(
@@ -809,9 +351,9 @@ class _HeaderSections extends StatelessWidget {
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
                         Text(
-                          'Post Date: ',
+                          'পোস্টিং ডেট',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: isDark
                                   ? Colors.white60
@@ -820,6 +362,7 @@ class _HeaderSections extends StatelessWidget {
                         DropdownButton(
                           alignment: Alignment.center,
                           value: postdate ?? dropdownDate[0],
+                          style: const TextStyle(fontSize: 12),
                           icon: Icon(Icons.keyboard_arrow_down,
                               color: isDark
                                   ? Colors.white
@@ -852,9 +395,9 @@ class _HeaderSections extends StatelessWidget {
                       // direction: Axis.vertical,
                       children: [
                         Text(
-                          'Deadline: ',
+                          'ডেডলাইন',
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: isDark
                                   ? Colors.white60
@@ -863,6 +406,7 @@ class _HeaderSections extends StatelessWidget {
                         DropdownButton(
                           alignment: Alignment.center,
                           value: deadline ?? dropdownDate[0],
+                          style: const TextStyle(fontSize: 12),
                           icon: Icon(Icons.keyboard_arrow_down,
                               color: isDark
                                   ? Colors.white
